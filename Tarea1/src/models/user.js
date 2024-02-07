@@ -16,7 +16,6 @@ class User {
 	}
 
 	update(id, data) {
-		console.log("url: ", `${url}/users/${id}`);
 		return axios.put(`${url}/users/${id}`, data);
 	}
 

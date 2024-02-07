@@ -16,7 +16,7 @@ Provide a brief description of your project here.
 ```sh
 npm install
 
-npm start
-
-npm run dev
+npm start / npm run dev
 ```
+
+you can use the test_api.http to test endpoints
