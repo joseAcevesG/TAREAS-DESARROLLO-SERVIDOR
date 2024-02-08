@@ -35,4 +35,4 @@ Para que la aplicación funcione correctamente, es necesario configurar algunas 
 
 ## Testing
 
-you can use the test_api.http to test endpoints
+se puede usar el archivo test_api.http para testear los endpoints
