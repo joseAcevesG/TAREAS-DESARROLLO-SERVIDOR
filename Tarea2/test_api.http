@@ -5,10 +5,10 @@ GET http://localhost:3000
 GET http://localhost:3000/users?token=12345
 
 ### Get user by id ###
-GET http://localhost:3000/users/1
+GET http://localhost:3000/users/1?token=12345
 
 ### Create user ###
-POST http://localhost:3000/users
+POST http://localhost:3000/users?token=12345
 Content-Type: application/json
 
 {
