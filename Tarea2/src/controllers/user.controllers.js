@@ -18,7 +18,7 @@ class UsersController {
 			});
 	}
 
-	getUser(req, res) {
+	getUserById(req, res) {
 		const user = new User();
 		user.findById(req.params.id)
 			.then((response) => {
