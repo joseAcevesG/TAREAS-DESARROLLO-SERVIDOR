@@ -1,27 +1,30 @@
-const axios = require("axios");
+const { Schema, model } = require("mongoose");
 
-const url = process.env.URL;
+const authUser = {
+	id: 1,
+	role: "admin",
+	name: "John",
+};
 
-class User {
-	find() {
-		return axios.get(`${url}/users`);
-	}
+const schema = new Schema({
+	name: { type: String },
+	email: {
+		type: String,
+		required: true,
+		unique: true,
+	},
+	password: {
+		type: String,
+		required: true,
+	},
+	status: {
+		type: String,
+		default: "new",
+	},
+	role: {
+		type: String,
+		default: "student",
+	},
+});
 
-	findById(id) {
-		return axios.get(`${url}/users/${id}`);
-	}
-
-	create(data) {
-		return axios.post(`${url}/users`, data);
-	}
-
-	update(id, data) {
-		return axios.put(`${url}/users/${id}`, data);
-	}
-
-	delete(id) {
-		return axios.delete(`${url}/users/${id}`);
-	}
-}
-
-module.exports = User;
+module.exports = { model: model("users", schema), authUser: authUser };

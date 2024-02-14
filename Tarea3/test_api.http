@@ -5,7 +5,7 @@ GET http://localhost:3000
 GET http://localhost:3000/users?token=12345
 
 ### Get user by id ###
-GET http://localhost:3000/users/1?token=12345
+GET http://localhost:3000/users/65cd053a087e1a94bc6900a2?token=12345
 
 ### Create user ###
 POST http://localhost:3000/users?token=12345
@@ -13,54 +13,17 @@ Content-Type: application/json
 
 {
   "name": "Leanne Graham",
-  "username": "Bret",
-  "email": "Sincere@april.biz",
-  "address": {
-    "street": "Kulas Light",
-    "suite": "Apt. 556",
-    "city": "Gwenborough",
-    "zipcode": "92998-3874",
-    "geo": {
-      "lat": "-37.3159",
-      "lng": "81.1496"
-    }
-  },
-  "phone": "1-770-736-8031 x56442",
-  "website": "hildegard.org",
-  "company": {
-    "name": "Romaguera-Crona",
-    "catchPhrase": "Multi-layered client-server neural-net",
-    "bs": "harness real-time e-markets"
-  }
+  "email": "jonh@gmail.com",
+  "password": "123"
 }
 
 ### Update user ###
-PUT http://localhost:3000/users/10
+PUT http://localhost:3000/users/65cd053a087e1a94bc6900a2?token=12345
 Content-Type: application/json
 
 {
-  "id": 1,
-  "name": "Leanne Graham",
-  "username": "Bret",
-  "email": "Sincere@april.biz",
-  "address": {
-    "street": "Kulas Light",
-    "suite": "Apt. 556",
-    "city": "Gwenborough",
-    "zipcode": "92998-3874",
-    "geo": {
-      "lat": "-37.3159",
-      "lng": "81.1496"
-    }
-  },
-  "phone": "1-770-736-8031 x56442",
-  "website": "hildegard.org",
-  "company": {
-    "name": "Romaguera-Crona",
-    "catchPhrase": "Multi-layered client-server neural-net",
-    "bs": "harness real-time e-markets"
-  }
+  "status": "active"
 }
 
 ### Delete user ###
-DELETE http://localhost:3000/users/11
+DELETE http://localhost:3000/users/65cd097e4acafbcae1244ac3?token=12345

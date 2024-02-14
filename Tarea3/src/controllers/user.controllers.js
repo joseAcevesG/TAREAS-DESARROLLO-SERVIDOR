@@ -1,74 +1,76 @@
-const User = require("../models/user");
+const { model: user } = require("../models/user");
 const ResponseStatus = require("../utils/response-codes");
 
 class UsersController {
 	getUsers(req, res) {
-		const user = new User();
+		console.log(user);
 		user.find()
 			.then((response) => {
-				if (response.status === ResponseStatus.NOT_FOUND) {
-					res.status(ResponseStatus.NOT_FOUND).send("No users found");
-				}
-				res.send(response.data);
+				console.log(response);
+				res.send(response);
 			})
 			.catch((error) => {
-				res.status(ResponseStatus.INTERNAL_SERVER_ERROR).send(
-					"Error retrieving users"
+				res.status(ResponseStatus.BAD_REQUEST).send(
+					"Something went wrong"
 				);
 			});
 	}
 
 	getUserById(req, res) {
-		const user = new User();
-		user.findById(req.params.id)
+		const UserId = req.params.id;
+		user.findById(UserId)
 			.then((response) => {
-				if (response.status === ResponseStatus.NOT_FOUND) {
+				if (!response) {
 					res.status(ResponseStatus.NOT_FOUND).send("User not found");
+					return;
 				}
-				res.send(response.data);
+				res.send(response);
 			})
 			.catch((error) => {
-				res.status(ResponseStatus.INTERNAL_SERVER_ERROR).send(
-					"Error retrieving user"
+				res.status(ResponseStatus.BAD_REQUEST).send(
+					"Something went wrong"
 				);
 			});
 	}
 
 	createUser(req, res) {
-		const user = new User();
 		user.create(req.body)
 			.then((response) => {
-				res.status(ResponseStatus.CREATED).send(response.data);
+				res.send(response);
 			})
 			.catch((error) => {
-				res.status(ResponseStatus.INTERNAL_SERVER_ERROR).send(
-					"Error creating user"
+				res.status(ResponseStatus.BAD_REQUEST).send(
+					"Something went wrong"
 				);
 			});
 	}
 
 	updateUser(req, res) {
-		const user = new User();
-		user.update(req.params.id, req.body)
+		const UserId = req.params.id;
+		user.findByIdAndUpdate(UserId, req.body)
 			.then((response) => {
-				res.send(response.data);
+				if (!response) {
+					res.status(ResponseStatus.NOT_FOUND).send("User not found");
+					return;
+				}
+				res.send(response);
 			})
 			.catch((error) => {
-				res.status(ResponseStatus.INTERNAL_SERVER_ERROR).send(
-					"Error updating user"
+				res.status(ResponseStatus.BAD_REQUEST).send(
+					"Something went wrong"
 				);
 			});
 	}
 
 	deleteUser(req, res) {
-		const user = new User();
-		user.delete(req.params.id)
+		const UserId = req.params.id;
+		user.findByIdAndDelete(UserId)
 			.then((response) => {
-				res.send(response.data);
+				res.send(response);
 			})
 			.catch((error) => {
-				res.status(ResponseStatus.INTERNAL_SERVER_ERROR).send(
-					"Error deleting user"
+				res.status(ResponseStatus.BAD_REQUEST).send(
+					"Something went wrong"
 				);
 			});
 	}
