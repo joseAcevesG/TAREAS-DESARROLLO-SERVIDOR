@@ -30,9 +30,7 @@ Para que la aplicación funcione correctamente, es necesario configurar algunas 
     ```plaintext
     PORT=3000               # El puerto en el que se ejecutará la aplicación
 
-    URL=https://jsonplaceholder.typicode.com  # La URL base que la aplicación usará para las solicitudes externas
-
-    DB_IRL=<mongo url> # La URL de la base de datos de mongo
+    DB_URL=<mongo url> # La URL de la base de datos de mongo
     ```
 
 ## Testing

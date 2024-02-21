@@ -3,10 +3,8 @@ const ResponseStatus = require("../utils/response-codes");
 
 class UsersController {
 	getUsers(req, res) {
-		console.log(user);
 		user.find()
 			.then((response) => {
-				console.log(response);
 				res.send(response);
 			})
 			.catch((error) => {

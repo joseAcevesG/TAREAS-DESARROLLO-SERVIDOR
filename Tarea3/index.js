@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(routes);
 
 async function start() {
-	const db_url = process.env.DB_IRL;
+	const db_url = process.env.DB_URL;
 	try {
 		await mongoose.connect(db_url);
 		console.log("Connected to db");

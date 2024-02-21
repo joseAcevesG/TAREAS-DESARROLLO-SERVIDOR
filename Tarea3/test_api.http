@@ -5,7 +5,7 @@ GET http://localhost:3000
 GET http://localhost:3000/users?token=12345
 
 ### Get user by id ###
-GET http://localhost:3000/users/65cd053a087e1a94bc6900a2?token=12345
+GET http://localhost:3000/users/65d54f134231f8a30b6d013e?token=12345
 
 ### Create user ###
 POST http://localhost:3000/users?token=12345
@@ -18,7 +18,7 @@ Content-Type: application/json
 }
 
 ### Update user ###
-PUT http://localhost:3000/users/65cd053a087e1a94bc6900a2?token=12345
+PUT http://localhost:3000/users/65d54f134231f8a30b6d013e?token=12345
 Content-Type: application/json
 
 {
@@ -26,4 +26,4 @@ Content-Type: application/json
 }
 
 ### Delete user ###
-DELETE http://localhost:3000/users/65cd097e4acafbcae1244ac3?token=12345
+DELETE http://localhost:3000/users/65d54f134231f8a30b6d013e?token=12345
