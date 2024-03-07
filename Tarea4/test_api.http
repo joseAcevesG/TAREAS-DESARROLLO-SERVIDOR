@@ -21,3 +21,4 @@ Content-Type: application/json
 GET http://localhost:3000/news?filter=OpenIA
 authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiam9zZSIsImVtYWlsIjoiam9zZUB0ZXN0LmNvbSIsImlhdCI6MTcwOTgzOTQ0OH0.gis0i0ClxFpmMDNIgu7fO12tP0etVjxdniZM1jLXLQc
 
+
