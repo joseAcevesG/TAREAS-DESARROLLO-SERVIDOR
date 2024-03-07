@@ -1,10 +1,15 @@
 const jwt = require("jsonwebtoken");
 
 function code(data) {
-	return jwt.sign(data, process.env.SECRET, { expiresIn: "24h" });
+	return jwt.sign(data, process.env.TOKEN_KEY);
 }
 
 function decode(token) {
-	return jwt.verify(token, process.env.SECRET);
+	try {
+		return jwt.verify(token, process.env.TOKEN_KEY);
+	} catch (error) {
+		return null;
+	}
 }
+
 module.exports = { code, decode };

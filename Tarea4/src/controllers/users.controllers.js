@@ -41,7 +41,11 @@ class UserController {
 		user.findOne(data)
 			.then((user) => {
 				if (user) {
-					const token = createToken.code(user);
+					const data = {
+						name: user.name,
+						email: user.email,
+					};
+					const token = createToken.code(data);
 					res.status(ResponseStatus.SUCCESS).send({ token });
 				} else {
 					res.status(ResponseStatus.UNAUTHORIZED).send(
