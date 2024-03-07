@@ -4,7 +4,7 @@ const hashPassword = require("../utils/hash-password");
 const createToken = require("../utils/create-token");
 
 class UserController {
-	singUp(req, res) {
+	signUp(req, res) {
 		const data = {
 			name: req.body.name,
 			password: hashPassword(req.body.password),
@@ -15,6 +15,16 @@ class UserController {
 				res.status(ResponseStatus.CREATED);
 			})
 			.catch((error) => {
+				if (error.code === 11000) {
+					res.status(ResponseStatus.BAD_REQUEST).send(
+						"Email already exists"
+					);
+					return;
+				}
+				if (error.name === "ValidationError") {
+					res.status(ResponseStatus.BAD_REQUEST).send("Invalid data");
+					return;
+				}
 				res.status(ResponseStatus.BAD_REQUEST).send(
 					"Something went wrong"
 				);
