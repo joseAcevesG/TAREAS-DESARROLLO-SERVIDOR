@@ -9,7 +9,7 @@
 		"dev": "cross-env Node_ENV=dev nodemon ."
 	},
 	"keywords": [],
-	"author": "",
+	"author": "JCAG",
 	"license": "ISC",
 	"devDependencies": {
 		"nodemon": "^3.1.0"
