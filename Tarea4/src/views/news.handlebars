@@ -1,0 +1,15 @@
+{{#if news}}
+	{{#each news}}
+		<div class="news-card">
+			<div class="news-content">
+				<h2 class="news-title">{{title}}</h2>
+				<p class="news-author">By {{author}}</p>
+				<p class="news-description">{{description}}</p>
+				<a href="{{url}}" class="news-link">Read more</a>
+				<p class="news-published">Published at: {{publishedAt}}</p>
+			</div>
+		</div>
+	{{/each}}
+{{else}}
+	<p>No news to show</p>
+{{/if}}
