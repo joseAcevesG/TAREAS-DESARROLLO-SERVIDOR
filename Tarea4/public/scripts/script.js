@@ -24,9 +24,9 @@ document.addEventListener("DOMContentLoaded", function () {
 	);
 
 	saveButton.addEventListener("click", function () {
-		const name = document.querySelector("#singUp #name");
-		const email = document.querySelector("#singUp #email");
-		const password = document.querySelector("#singUp #password");
+		const name = document.querySelector("#singUp #name_singUp");
+		const email = document.querySelector("#singUp #email_singUp");
+		const password = document.querySelector("#singUp #password_singUp");
 
 		const formData = {
 			name: name.value,
@@ -87,8 +87,8 @@ document.addEventListener("DOMContentLoaded", function () {
 	);
 
 	logInButtonModal.addEventListener("click", function () {
-		const email = document.querySelector("#logIn #email");
-		const password = document.querySelector("#logIn #password");
+		const email = document.querySelector("#logIn #email_logIn");
+		const password = document.querySelector("#logIn #password_logIn");
 
 		const formData = {
 			email: email.value,

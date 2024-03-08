@@ -63,7 +63,7 @@
 						<input
 							type="text"
 							class="form-control"
-							id="name"
+							id="name_singUp"
 							name="name"
 							placeholder="Enter your name"
 						/>
@@ -73,7 +73,7 @@
 						<input
 							type="email"
 							class="form-control"
-							id="email"
+							id="email_singUp"
 							name="email"
 							aria-describedby="emailHelp"
 							placeholder="Enter email"
@@ -84,7 +84,7 @@
 						<input
 							type="password"
 							class="form-control"
-							id="password"
+							id="password_singUp"
 							name="password"
 							placeholder="Password"
 						/>
@@ -126,7 +126,29 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				Body
+				<form>
+					<div class="form-group">
+						<label for="email">Email address</label>
+						<input
+							type="email"
+							class="form-control"
+							id="email_logIn"
+							name="email"
+							aria-describedby="emailHelp"
+							placeholder="Enter email"
+						/>
+					</div>
+					<div class="form-group">
+						<label for="password">Password</label>
+						<input
+							type="password"
+							class="form-control"
+							id="password_logIn"
+							name="password"
+							placeholder="Password"
+						/>
+					</div>
+				</form>
 			</div>
 			<div class="modal-footer">
 				<button
