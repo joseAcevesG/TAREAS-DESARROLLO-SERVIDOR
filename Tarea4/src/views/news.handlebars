@@ -1,7 +1,15 @@
-<form action="" method="GET" class="search-box">
-	<input type="text" name="q" class="search-input" placeholder="Search..." />
-	<button type="submit" class="search-button">Search</button>
-</form>
+<div class="top-bar">
+	<form class="search-box">
+		<input
+			type="text"
+			id="filter"
+			class="search-input"
+			placeholder="Search..."
+		/>
+		<button type="button" class="search-button" id="search">Search</button>
+	</form>
+	<button type="button" class="button" id="logOut">Log Out</button>
+</div>
 {{#if news}}
 	{{#each news}}
 		<div class="news-card">
