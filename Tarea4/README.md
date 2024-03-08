@@ -4,6 +4,8 @@
 
 tarea 4 de la materia de desarrollo de aplicaciones web
 
+en los formularios y la barra de busqueda no sirve dar enter para enviar se tiene que dar click en los botones
+
 ## Prerequisites
 
 -   Node.js (v20.11.0)
