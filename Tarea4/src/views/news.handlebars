@@ -1,3 +1,7 @@
+<form action="PAGINA_DESTINO" method="GET" class="search-box">
+	<input type="text" name="q" class="search-input" placeholder="Search..." />
+	<button type="submit" class="search-button">Search</button>
+</form>
 {{#if news}}
 	{{#each news}}
 		<div class="news-card">
@@ -5,7 +9,7 @@
 				<h2 class="news-title">{{title}}</h2>
 				<p class="news-author">By {{author}}</p>
 				<p class="news-description">{{description}}</p>
-				<a href="{{url}}" class="news-link">Read more</a>
+				<a href="{{url}}" class="news-link" target="_blank">Read more</a>
 				<p class="news-published">Published at: {{publishedAt}}</p>
 			</div>
 		</div>
