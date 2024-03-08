@@ -3,7 +3,7 @@ const createToken = require("../utils/create-token");
 const user = require("../models/user");
 
 module.exports = (req, res, next) => {
-	const token = req.headers["authorization"];
+	const token = req.query.token;
 	if (!token) {
 		res.status(ResponseStatus.UNAUTHORIZED).send("Unauthorized");
 		return;
