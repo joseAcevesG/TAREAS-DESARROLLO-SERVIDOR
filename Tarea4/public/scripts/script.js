@@ -1,3 +1,4 @@
+const signUpModal = document.querySelector("#singUp");
 document.addEventListener("DOMContentLoaded", function () {
 	const saveButton = document.querySelector(
 		"#singUp .modal-footer .btn-primary"
@@ -22,15 +23,19 @@ document.addEventListener("DOMContentLoaded", function () {
 			body: JSON.stringify(formData),
 		})
 			.then((response) => {
-				console.log(response);
-				if (response.ok) {
-					return;
-				} else {
-					throw new Error("Failed to send data");
+				if (!response.ok) {
+					return response.text().then((text) => {
+						throw new Error(text);
+					});
 				}
+				return response.text();
+			})
+			.then((data) => {
+				console.log(data);
 			})
 			.catch((error) => {
-				console.error("Error:", error);
+				console.error(error.message);
+				alert(error.message);
 			});
 	});
 });

@@ -12,7 +12,7 @@ class UserController {
 		};
 		user.create(data)
 			.then((user) => {
-				res.status(ResponseStatus.CREATED);
+				res.status(ResponseStatus.CREATED).send("User created");
 			})
 			.catch((error) => {
 				if (error.code === 11000) {
