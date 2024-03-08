@@ -31,7 +31,25 @@ document.addEventListener("DOMContentLoaded", function () {
 				return response.text();
 			})
 			.then((data) => {
-				console.log(data);
+				return fetch("auth/logIn", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify(formData),
+				});
+			})
+			.then((response) => {
+				if (!response.ok) {
+					return response.text().then((text) => {
+						throw new Error(text);
+					});
+				}
+				return response.json();
+			})
+			.then((data) => {
+				localStorage.setItem("token", data.token);
+				console.log(data.token);
 			})
 			.catch((error) => {
 				console.error(error.message);
