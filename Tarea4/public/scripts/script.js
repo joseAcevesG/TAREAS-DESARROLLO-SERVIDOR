@@ -1,6 +1,8 @@
 const signUpModal = document.querySelector("#singUp");
 
 function isLogged() {
+	if (window.location.pathname !== "/") return;
+
 	const signUpButton = document.querySelector("#signUpButton");
 	const logInButton = document.querySelector("#logInButton");
 	const logOutButton = document.querySelector("#logOut");
@@ -16,7 +18,7 @@ function isLogged() {
 	}
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+function main() {
 	isLogged();
 
 	const saveButton = document.querySelector(
@@ -122,10 +124,31 @@ document.addEventListener("DOMContentLoaded", function () {
 				alert(error.message);
 			});
 	});
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+	if (window.location.pathname === "/") {
+		main();
+	}
 
 	const logOutButton = document.querySelector("#logOut");
 	logOutButton.addEventListener("click", function () {
 		localStorage.removeItem("token");
+		if (window.location.pathname !== "/") {
+			window.location.href = "/";
+		}
 		isLogged();
+	});
+
+	const searchButton = document.querySelector("#search");
+	searchButton.addEventListener("click", function () {
+		if (!localStorage.getItem("token")) {
+			alert("You need to log in to search news");
+			return;
+		}
+		const filter = document.querySelector("#filter").value;
+		window.location.href = `/news?filter=${filter}&token=${localStorage.getItem(
+			"token"
+		)}`;
 	});
 });
