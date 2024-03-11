@@ -9,7 +9,10 @@ class NewsController {
 		axios
 			.get(url)
 			.then((response) => {
-				res.render("news", { news: response.data.articles });
+				res.render("news", {
+					layout: "news-page",
+					news: response.data.articles,
+				});
 				// res.status(ResponseStatus.SUCCESS).send(response.data);
 			})
 			.catch((error) => {
