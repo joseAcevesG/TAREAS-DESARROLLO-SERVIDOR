@@ -1,0 +1,179 @@
+<div class="main">
+	<h1>Home</h1>
+	<form class="search-box">
+		<input
+			type="text"
+			id="filter"
+			class="search-input"
+			placeholder="Search..."
+		/>
+		<button type="button" class="search-button" id="search">Search</button>
+	</form>
+	<div>
+		<button
+			type="button"
+			class="button"
+			data-toggle="modal"
+			data-target="#singUp"
+			id="signUpButton"
+		>Sign Up</button>
+		<button
+			type="button"
+			class="button"
+			data-toggle="modal"
+			data-target="#logIn"
+			id="logInButton"
+		>Log In</button>
+		<button
+			type="button"
+			class="button"
+			id="logOut"
+			style="display: none;"
+		>Log Out</button>
+	</div>
+
+</div>
+
+<!-- Modal Sing Up -->
+<div
+	class="modal fade"
+	id="singUp"
+	tabindex="-1"
+	role="dialog"
+	aria-labelledby="modelTitleId"
+	aria-hidden="true"
+>
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Sing Up</h5>
+				<button
+					type="button"
+					class="close"
+					data-dismiss="modal"
+					aria-label="Close"
+				>
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form>
+					<div class="form-group">
+						<label for="name">Name</label>
+						<input
+							type="text"
+							class="form-control"
+							id="name_singUp"
+							name="name"
+							placeholder="Enter your name"
+						/>
+					</div>
+					<div class="form-group">
+						<label for="email">Email address</label>
+						<input
+							type="email"
+							class="form-control"
+							id="email_singUp"
+							name="email"
+							aria-describedby="emailHelp"
+							placeholder="Enter email"
+						/>
+					</div>
+					<div class="form-group">
+						<label for="password">Password</label>
+						<input
+							type="password"
+							class="form-control"
+							id="password_singUp"
+							name="password"
+							placeholder="Password"
+						/>
+					</div>
+				</form>
+				<p>
+					you already have an account?
+					<a
+						href="#"
+						data-dismiss="modal"
+						data-toggle="modal"
+						data-target="#logIn"
+					> Log In</a>.</p>
+			</div>
+			<div class="modal-footer">
+				<button
+					type="button"
+					class="btn btn-secondary"
+					data-dismiss="modal"
+				>Close</button>
+				<button type="button" class="btn btn-primary">Save</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Modal log In-->
+<div
+	class="modal fade"
+	id="logIn"
+	tabindex="-1"
+	role="dialog"
+	aria-labelledby="modelTitleId"
+	aria-hidden="true"
+>
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Log In</h5>
+				<button
+					type="button"
+					class="close"
+					data-dismiss="modal"
+					aria-label="Close"
+				>
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form>
+					<div class="form-group">
+						<label for="email">Email address</label>
+						<input
+							type="email"
+							class="form-control"
+							id="email_logIn"
+							name="email"
+							aria-describedby="emailHelp"
+							placeholder="Enter email"
+						/>
+					</div>
+					<div class="form-group">
+						<label for="password">Password</label>
+						<input
+							type="password"
+							class="form-control"
+							id="password_logIn"
+							name="password"
+							placeholder="Password"
+						/>
+					</div>
+				</form>
+				<p>
+					you don't have an account?
+					<a
+						href="#"
+						data-dismiss="modal"
+						data-toggle="modal"
+						data-target="#singUp"
+					>Register here</a>.</p>
+			</div>
+			<div class="modal-footer">
+				<button
+					type="button"
+					class="btn btn-secondary"
+					data-dismiss="modal"
+				>Close</button>
+				<button type="button" class="btn btn-primary">Enter</button>
+			</div>
+		</div>
+	</div>
+</div>

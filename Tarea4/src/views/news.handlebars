@@ -1,0 +1,27 @@
+<div class="top-bar">
+	<form class="search-box">
+		<input
+			type="text"
+			id="filter"
+			class="search-input"
+			placeholder="Search..."
+		/>
+		<button type="button" class="search-button" id="search">Search</button>
+	</form>
+	<button type="button" class="button" id="logOut">Log Out</button>
+</div>
+{{#if news}}
+	{{#each news}}
+		<div class="news-card">
+			<div class="news-content">
+				<h2 class="news-title">{{title}}</h2>
+				<p class="news-author">By {{author}}</p>
+				<p class="news-description">{{description}}</p>
+				<a href="{{url}}" class="news-link" target="_blank">Read more</a>
+				<p class="news-published">Published at: {{publishedAt}}</p>
+			</div>
+		</div>
+	{{/each}}
+{{else}}
+	<p>No news to show</p>
+{{/if}}

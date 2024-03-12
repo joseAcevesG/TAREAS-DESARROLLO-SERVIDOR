@@ -1,0 +1,23 @@
+### sign up ###
+POST http://localhost:3000/auth/signUp
+Content-Type: application/json
+
+{
+    "name": "jose",
+    "email": "jose@test.com",
+    "password": "123"
+}
+
+### log in ###
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email": "jose@test.com",
+    "password": "123"
+}
+
+### get  news ###
+GET http://localhost:3000/news?filter=OpenIA/token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTGVhbm5lIEdyYWhhbSIsImVtYWlsIjoiU2luY2VyZUBhcHJpbC5iaXoiLCJpYXQiOjE3MTAyMDA4MTR9.Pn_aWxlWtlB8L0HFrAkpyL2A82VKzkmK22VwiZT7rQo
+
+
