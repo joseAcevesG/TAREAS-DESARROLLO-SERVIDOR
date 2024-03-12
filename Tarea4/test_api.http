@@ -18,7 +18,6 @@ Content-Type: application/json
 }
 
 ### get  news ###
-GET http://localhost:3000/news?filter=OpenIA
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiam9zZSIsImVtYWlsIjoiam9zZUB0ZXN0LmNvbSIsImlhdCI6MTcwOTgzOTQ0OH0.gis0i0ClxFpmMDNIgu7fO12tP0etVjxdniZM1jLXLQc
+GET http://localhost:3000/news?filter=OpenIA/token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTGVhbm5lIEdyYWhhbSIsImVtYWlsIjoiU2luY2VyZUBhcHJpbC5iaXoiLCJpYXQiOjE3MTAyMDA4MTR9.Pn_aWxlWtlB8L0HFrAkpyL2A82VKzkmK22VwiZT7rQo
 
 
